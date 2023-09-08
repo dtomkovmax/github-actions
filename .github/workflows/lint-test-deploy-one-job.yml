@@ -1,0 +1,20 @@
+name: Lint, test and deploy in one job
+on: push
+jobs:
+    lint-test-deploy:
+        runs-on: ubuntu-latest
+        steps:
+          - name: Get code
+            uses: actions/checkout@v4
+          - name: Set up node
+            uses: actions/setup-node@v3
+            with:
+                node-version: 16
+          - name: Install dependencies
+            run: npm ci
+          - name: Run lint
+            run: npm run lint
+          - name: Run test
+            run: npm run test
+          - name: Run build
+            run: npm run build
