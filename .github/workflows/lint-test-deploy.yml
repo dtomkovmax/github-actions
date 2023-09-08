@@ -5,16 +5,16 @@ jobs:
         runs-on: ubuntu-latest
         steps:
           - name: Run lint
-            run: echo "npm lint"
+            run: echo "npm run lint"
     test:
         needs: lint
         runs-on: ubuntu-latest
         steps:
           - name: Run test
-            run: echo "npm test"
+            run: echo "npm run test"
     deploy:
         needs: test
         runs-on: ubuntu-latest
         steps:
           - name: Run build
-            run: echo "npm build"
+            run: echo "npm run build"
