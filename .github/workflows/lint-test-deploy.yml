@@ -11,9 +11,9 @@ jobs:
             with:
                 node-version: 16
           - name: Install dependencies
-            run: echo "npm ci"
+            run: npm ci
           - name: Run lint
-            run: echo "npm lint"
+            run: npm lint
     test:
         needs: lint
         runs-on: ubuntu-latest
@@ -25,9 +25,9 @@ jobs:
             with:
                 node-version: 16
           - name: Install dependencies
-            run: echo "npm ci"
+            run: npm ci
           - name: Run test
-            run: echo "npm test"
+            run: npm test
     deploy:
         needs: test
         runs-on: ubuntu-latest
@@ -39,6 +39,6 @@ jobs:
             with:
                 node-version: 16
           - name: Install dependencies
-            run: echo "npm ci"
+            run: npm ci
           - name: Run build
-            run: echo "npm build"
+            run: npm build
