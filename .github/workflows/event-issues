@@ -1,0 +1,8 @@
+name: Output issues
+on: issue_comment
+jobs:
+    issue:
+        runs-on: ubuntu-latest
+        steps:
+          - name: Output event details
+            run: echo "${{ toJSON(github.event.issue) }}"
