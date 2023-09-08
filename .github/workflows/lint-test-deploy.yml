@@ -4,17 +4,41 @@ jobs:
     lint:
         runs-on: ubuntu-latest
         steps:
+          - name: Get code
+            uses: action/checkout@v4
+          - name: Set up node
+            uses: actions/setup-node@3
+            with:
+                node-version: 16
+          - name: Install dependencies
+            run: echo "npm ci"
           - name: Run lint
-            run: echo "npm run lint"
+            run: echo "npm lint"
     test:
         needs: lint
         runs-on: ubuntu-latest
         steps:
+          - name: Get code
+            uses: action/checkout@v4
+          - name: Set up node
+            uses: actions/setup-node@3
+            with:
+                node-version: 16
+          - name: Install dependencies
+            run: echo "npm ci"
           - name: Run test
-            run: echo "npm run test"
+            run: echo "npm test"
     deploy:
         needs: test
         runs-on: ubuntu-latest
         steps:
+          - name: Get code
+            uses: action/checkout@v4
+          - name: Set up node
+            uses: actions/setup-node@3
+            with:
+                node-version: 16
+          - name: Install dependencies
+            run: echo "npm ci"
           - name: Run build
-            run: echo "npm run build"
+            run: echo "npm build"
